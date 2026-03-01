@@ -37,12 +37,10 @@ app.get("/sections", async (req, res) => {
 
     const text = await response.text();
 
-    // Try parsing JSON safely
     try {
-      const data = JSON.parse(text);
-      res.json(data);
+      res.json(JSON.parse(text));
     } catch {
-      res.status(500).send(text); // send raw response if not JSON
+      res.status(500).send(text);
     }
 
   } catch (error) {
