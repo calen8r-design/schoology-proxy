@@ -2,9 +2,6 @@ const express = require("express");
 const OAuth = require("oauth-1.0a");
 const crypto = require("crypto");
 
-const fetch = (...args) =>
-  import("node-fetch").then(({ default: fetch }) => fetch(...args));
-
 const app = express();
 
 const consumerKey = process.env.SCHOOLOGY_KEY;
